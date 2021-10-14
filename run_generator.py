@@ -4,11 +4,11 @@ import random, string, urllib.request, json, getpass
 password = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(20))
  
 #Download ngrok
-! wget -q -c -nc https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
-! unzip -qq -n ngrok-stable-linux-amd64.zip
+wget -q -c -nc https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+unzip -qq -n ngrok-stable-linux-amd64.zip
  
 #Setup sshd
-! apt-get install -qq -o=Dpkg::Use-Pty=0 openssh-server pwgen > /dev/null
+apt-get install -qq -o=Dpkg::Use-Pty=0 openssh-server pwgen > /dev/null
  
 #Set root password
 ! echo root:$password | chpasswd
